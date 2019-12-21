@@ -15,7 +15,7 @@ func HelloWorld(w http.ResponseWriter, r *http.Request) {
 	switch r.Method {
 	case "GET":
 
-		vals :=	r.URL.Query()
+		vals := r.URL.Query()
 
 		if vals.Get("q") == "" {
 			http.Error(w, "Must pass 'q' param", http.StatusBadRequest)
@@ -23,6 +23,9 @@ func HelloWorld(w http.ResponseWriter, r *http.Request) {
 
 		var image []byte
 		image, err := qc.Encode(vals.Get("q"), qc.Medium, 256)
+		if err != nil {
+			http.Error(w, "Failed to encode QR image", http.StatusInternalServerError)
+		}
 
 		w.Header().Set("Content-Type", "image/png")
 		w.Header().Set("Content-Length", strconv.Itoa(len(image)))
