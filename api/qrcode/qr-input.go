@@ -11,7 +11,7 @@ import (
 	qc "github.com/skip2/go-qrcode"
 )
 
-func HelloWorld(w http.ResponseWriter, r *http.Request) {
+func QrWithInput(w http.ResponseWriter, r *http.Request) {
 	switch r.Method {
 	case "GET":
 
@@ -45,11 +45,4 @@ func HelloWorld(w http.ResponseWriter, r *http.Request) {
 		w.Write([]byte(http.StatusText(http.StatusNotImplemented)))
 	}
 
-}
-func QrHandler(w http.ResponseWriter, r *http.Request) {
-
-	// if _, err := w.Write(buffer.Bytes()); err != nil {
-	// log.Println("unable to write image.")
-	// }
-	// fmt.Fprintf(w, "<h1>Hello from Go on Now!</h1>")
 }
