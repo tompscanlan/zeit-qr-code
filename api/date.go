@@ -1,4 +1,4 @@
-package zeit_qr_code
+package zeitqrcode
 
 import (
 	"fmt"

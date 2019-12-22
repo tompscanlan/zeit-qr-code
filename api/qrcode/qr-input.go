@@ -1,4 +1,4 @@
-package zeit_qr_code
+package zeitqrcode
 
 import (
 	// "fmt"
@@ -15,14 +15,14 @@ func QrWithInput(w http.ResponseWriter, r *http.Request) {
 	switch r.Method {
 	case "GET":
 
-		vals := r.URL.Query()
+		queryParams := r.URL.Query()
 
-		if vals.Get("q") == "" {
+		if queryParams.Get("q") == "" {
 			http.Error(w, "Must pass 'q' param", http.StatusBadRequest)
 		}
 
 		var image []byte
-		image, err := qc.Encode(vals.Get("q"), qc.Medium, 256)
+		image, err := qc.Encode(queryParams.Get("q"), qc.Medium, 256)
 		if err != nil {
 			http.Error(w, "Failed to encode QR image", http.StatusInternalServerError)
 		}

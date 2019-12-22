@@ -1,9 +1,10 @@
-module zeit_qr_code
+module zeitqrcode
 
 go 1.13
 
 require (
 	github.com/DataDog/zstd v1.4.4 // indirect
+	github.com/coreos/etcd v3.3.18+incompatible
 	github.com/go-stack/stack v1.8.0 // indirect
 	github.com/golang/snappy v0.0.1 // indirect
 	github.com/pkg/errors v0.8.1 // indirect
