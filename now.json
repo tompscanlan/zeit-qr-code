@@ -2,6 +2,10 @@
     "name": "qr-app",
     "version": 2,
     "env": {
-      "MONGODB_URI": "@mongodb-uri"
+      "MONGODB_URI": "@mongodb-uri",
+      "CLIENT_ID": "@client-id",
+      "CLIENT_SECRET": "@client-secret",
+      "CALLBACK_URL": "@callback-url",
+      "AUTH_DOMAIN": "@auth-domain"
     }
   }
