@@ -8,7 +8,7 @@ import (
 	qc "github.com/skip2/go-qrcode"
 )
 
-// Handler asd
+// QrHandler asd
 func QrHandler(w http.ResponseWriter, r *http.Request) {
 	var image []byte
 	image, err := qc.Encode("https://example.org", qc.Medium, 256)
